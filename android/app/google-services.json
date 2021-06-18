@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "306024476007",
+    "project_id": "authentication-5d08f",
+    "storage_bucket": "authentication-5d08f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        // "mobilesdk_app_id": "1:306024476007:android:c93221ba434ab2d97c93c2",
+        "android_client_info": {
+          "package_name": "com.example.food_delivary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306024476007-rfdsuhqjb1knufmavo18941ib2vpn534.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.food_delivary",
+            "certificate_hash": "07af4deb343c1efdd4dade6bb588f078fd4094c6"
+          }
+        },
+        {
+          "client_id": "306024476007-1io5re6629brgfgig21n2uomm83ht9pp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfXZ0KY8JKK0sRvt6NuIqarMJnkHN_MJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306024476007-1io5re6629brgfgig21n2uomm83ht9pp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
