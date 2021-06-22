@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+// import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:food_delivary/utils/location.dart';
-import 'package:geocoding/geocoding.dart';
+// import 'package:geocoding/geocoding.dart';
 
 class HomeTopInfo extends StatefulWidget {
   const HomeTopInfo({key}) : super(key: key);
@@ -11,7 +11,7 @@ class HomeTopInfo extends StatefulWidget {
 }
 
 class _HomeTopInfoState extends State<HomeTopInfo> {
-  String place = "My";
+  String place = "My Address";
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +66,6 @@ class _HomeTopInfoState extends State<HomeTopInfo> {
                     //           title: Text(" NO "),
                     //         ));
                   }
-                  EasyLoading.dismiss();
                   setState(() {});
 
                   // String place = await Navigator.of(context).push(
@@ -91,9 +90,9 @@ class _HomeTopInfoState extends State<HomeTopInfo> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 20,
-                  ),
+                  // SizedBox(
+                  //   height: 20,
+                  // ),
                   Text(
                     "Home",
                     textAlign: TextAlign.left,

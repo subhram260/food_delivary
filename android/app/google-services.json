@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        // "mobilesdk_app_id": "1:306024476007:android:c93221ba434ab2d97c93c2",
+        "mobilesdk_app_id": "1:306024476007:android:c93221ba434ab2d97c93c2",
         "android_client_info": {
           "package_name": "com.example.food_delivary"
         }
@@ -24,6 +24,7 @@
         {
           "client_id": "306024476007-1io5re6629brgfgig21n2uomm83ht9pp.apps.googleusercontent.com",
           "client_type": 3
+
         }
       ],
       "api_key": [

@@ -1,6 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivary/pages/accounts_page.dart';
+// import 'package:food_delivary/pages/accounts_page.dart';
 import 'package:food_delivary/pages/favourite_page.dart';
 import 'package:food_delivary/pages/orderpage.dart';
 import 'package:food_delivary/profile.dart';

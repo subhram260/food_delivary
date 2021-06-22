@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+// import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:food_delivary/body.dart';
 
 void main() {
@@ -8,7 +8,6 @@ void main() {
   // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
   runApp(App());
-  configLoading();
 }
 
 class App extends StatelessWidget {
@@ -19,29 +18,11 @@ class App extends StatelessWidget {
     );
 
     return MaterialApp(
-      builder: EasyLoading.init(),
       title: 'Introduction screen',
       debugShowCheckedModeBanner: false,
       home: OnBoardingPage(),
     );
   }
-}
-
-void configLoading() {
-  EasyLoading.instance
-    ..displayDuration = const Duration(milliseconds: 10)
-    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
-    ..loadingStyle = EasyLoadingStyle.dark
-    ..indicatorSize = 45.0
-    ..radius = 10.0
-    ..progressColor = Colors.yellow
-    ..backgroundColor = Colors.green
-    ..indicatorColor = Colors.yellow
-    ..textColor = Colors.yellow
-    ..maskColor = Colors.blue.withOpacity(0.5)
-    ..userInteractions = true
-    ..dismissOnTap = false;
-  // ..customAnimation = CustomAnimation();
 }
 
 class OnBoardingPage extends StatefulWidget {
