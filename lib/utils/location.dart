@@ -1,9 +1,8 @@
-// import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-// import 'package:flutter_spinkit/flutter_spinkit.dart';
-
+import 'package:toast/toast.dart';
 class LocationApp extends StatefulWidget {
   // const Locap({ Key? key }) : super(key: key);
 
@@ -13,6 +12,10 @@ class LocationApp extends StatefulWidget {
 
 class _LocationAppState extends State<LocationApp>
     with SingleTickerProviderStateMixin {
+  void showToast(String msg, {int duration, int gravity}) {
+    Toast.show(msg, context, duration: duration, gravity: gravity);
+  }
+
   var locationMassege = "";
   String locationAddress = "";
 
@@ -45,7 +48,7 @@ class _LocationAppState extends State<LocationApp>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Location App"),
+        // title: Text("Location App"),
         backgroundColor: Color(0xff6d61f2),
       ),
       body: Center(
@@ -111,10 +114,12 @@ class _LocationAppState extends State<LocationApp>
                 //       vsync: this,
                 //       duration: const Duration(milliseconds: 1200)),
                 // );
-
+                showToast("Finding Location....",
+                    gravity: Toast.BOTTOM, duration: 2);
                 if (locationAddress.isNotEmpty) {
                   // Navigator.pop(context, locationAddress);
-
+                  showToast("Successfully found location",
+                      gravity: Toast.BOTTOM, duration: 2);
                 }
               },
               child: Text(
@@ -135,6 +140,7 @@ class _LocationAppState extends State<LocationApp>
               onPressed: () {
                 print(locationAddress);
                 if (locationAddress.isNotEmpty) {
+                  // locationAdd(context, locationAddress);
                   Navigator.pop(context, locationAddress);
                 }
               },
@@ -154,3 +160,7 @@ class _LocationAppState extends State<LocationApp>
     );
   }
 }
+
+// Widget locationAdd(BuildContext context, String locationAddress) {
+//   return Text("")
+// }

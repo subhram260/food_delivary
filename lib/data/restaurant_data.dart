@@ -1,100 +1,27 @@
-import '../model/restaurant_model.dart';
+import 'dart:convert';
+import 'package:food_delivary/model/restaurant_model.dart';
+import 'package:http/http.dart' as http;
 
-final restaurants = [
-  Restaurant(
-      id: "1",
-      name: "Biriyani Box",
-      imagePath: "assets/images/biriyani.jpg",
-      category: "•  pizza   •",
-      price: 150,
-      discount: 50,
-      ratings: 4.6),
-  Restaurant(
-      id: "2",
-      name: "Oberoi",
-      imagePath: "assets/images/butter_chicken.jpg",
-      category: "•  pizza   •",
-      price: 300,
-      discount: 40,
-      ratings: 4.5),
-  Restaurant(
-      id: "3",
-      name: "Sk Restro",
-      imagePath: "assets/images/dosa.jpeg",
-      category: "•  pizza   •",
-      price: 75,
-      discount: 45,
-      ratings: 4.0),
-  Restaurant(
-      id: "1",
-      name: "Biriyani Box",
-      imagePath: "assets/images/biriyani.jpg",
-      category: "•  pizza   •",
-      price: 150,
-      discount: 50,
-      ratings: 4.3),
-  Restaurant(
-      id: "2",
-      name: "Oberoi",
-      imagePath: "assets/images/butter_chicken.jpg",
-      category: "•  pizza   •",
-      price: 300,
-      discount: 40,
-      ratings: 4.5),
-  Restaurant(
-      id: "3",
-      name: "Raghu Mausa",
-      imagePath: "assets/images/dosa.jpeg",
-      category: "•  pizza   •",
-      price: 75,
-      discount: 45,
-      ratings: 4.0),
-  Restaurant(
-      id: "1",
-      name: "Biriyani Box",
-      imagePath: "assets/images/biriyani.jpg",
-      category: "•  pizza   •",
-      price: 150,
-      discount: 50,
-      ratings: 4.3),
-  Restaurant(
-      id: "2",
-      name: "Oberoi",
-      imagePath: "assets/images/butter_chicken.jpg",
-      category: "•  pizza   •",
-      price: 300,
-      discount: 40,
-      ratings: 4.5),
-  Restaurant(
-      id: "3",
-      name: "Raghu Mausa",
-      imagePath: "assets/images/dosa.jpeg",
-      category: "•  pizza   •",
-      price: 75,
-      discount: 45,
-      ratings: 4.0),
-  Restaurant(
-      id: "1",
-      name: "Biriyani Box",
-      imagePath: "assets/images/biriyani.jpg",
-      category: "•  pizza   •",
-      price: 150,
-      discount: 50,
-      ratings: 4.3),
-  Restaurant(
-      id: "2",
-      name: "Oberoi",
-      imagePath: "assets/images/butter_chicken.jpg",
-      category: "•  pizza   •",
-      price: 300,
-      discount: 40,
-      ratings: 4.5),
-  Restaurant(
-      id: "3",
-      name: "Sk Restro",
-      imagePath: "assets/images/dosa.jpeg",
-      category: "•  pizza   •",
-      price: 75,
-      discount: 45,
-      ratings: 4.0),
-];
+class RestaurantApi {
+  static Future<List<Restaurant>> getRestaurant() async {
+    var uri = Uri.https('yummly2.p.rapidapi.com', '/feeds/list',
+        {"limit": "18", "start": "0", "tag": "list.recipe.popular"});
+
+    final response = await http.get(uri, headers: {
+      "x-rapidapi-key": "de23dd8857mshfc93e37a286643dp15c2dajsn2e8febb6987a",
+      "x-rapidapi-host": "yummly2.p.rapidapi.com",
+      "useQueryString": "true"
+    });
+
+    Map data = jsonDecode(response.body);
+    List _temp = [];
+
+    for (var i in data['feed']) {
+      _temp.add(i['content']['details']);
+    }
+
+    return Restaurant.restaurantFromSnapshot(_temp);
+  }
+}
+
+//de23dd8857mshfc93e37a286643dp15c2dajsn2e8febb6987a

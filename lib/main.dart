@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
+import 'body.dart';
+// import 'package:flutter/services.dart';
+// import 'package:food_delivary_ayushman/body.dart';
 // import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:food_delivary/body.dart';
+// import 'package:food_delivary/body.dart';
 
 void main() {
 // async {
@@ -13,9 +16,9 @@ void main() {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent),
-    );
+    // SystemChrome.setSystemUIOverlayStyle(
+    //   SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent),
+    // );
 
     return MaterialApp(
       title: 'Introduction screen',

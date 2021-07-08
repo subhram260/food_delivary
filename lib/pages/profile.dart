@@ -1,36 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivary/screen/SignIn.dart';
 import 'package:food_delivary/utils/NewCard.dart';
-// import 'package:food_delivary_ayushman/screen/SignIn.dart';
-// import 'package:food_delivary_ayushman/utils/NewCard.dart';
-// import 'package:food_delivary/utils/NewCard.dart';
-// import 'package:food_delivary/screen/SignIn.dart';
-// // import 'package:food_delivary/controllers/authentication.dart';
-// import 'package:food_delivary/home.dart';
 
-class Profile extends StatelessWidget {
-  // const Profile({ Key? key }) : super(key: key);
-
+class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   // title: Text(
-      //   //   "Profile",
-      //   //   style: TextStyle(color: Colors.black),
-      //   //   textAlign: TextAlign.center,
-      //   // ),
-      //   // leading: IconButton(
-      //   //   icon: Icon(
-      //   //     Icons.arrow_back_ios,
-      //   //     color: Colors.black,
-      //   //   ),
-      //   //   onPressed: () {},
-      //   // ),
-      //   backgroundColor: Color(0xFFD7B70FA),
-      //   shadowColor: Colors.transparent,
-      // ),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Color(0xFFD7B70FA),
+        shadowColor: Colors.transparent,
+      ),
       body: Container(
         child: Stack(
           children: [
@@ -59,10 +39,6 @@ class Profile extends StatelessWidget {
                         CircleAvatar(
                           backgroundColor: Colors.white,
                           radius: 40,
-                          // child: Image.asset(
-                          //   "assets/images/facebook.png",
-                          //   width: 60,
-                          // ),
                         ),
                         SizedBox(
                           width: 10,
@@ -97,10 +73,6 @@ class Profile extends StatelessWidget {
                   Spacer(),
                   Spacer(),
                   Spacer(),
-                  // Spacer(),
-                  // NewCard(
-                  //   text: "About",
-                  // ),
                   NewCard(
                     text: "Wishlist",
                     icon: Icons.favorite_border,
@@ -130,9 +102,7 @@ class Profile extends StatelessWidget {
                   ),
                   Spacer(),
                   InkWell(
-                    onTap: ()
-                        // => signOutUser().whenComplete(() =>
-                        {
+                    onTap: () {
                       Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(builder: (context) => SignIn()),
                           (route) => false);
@@ -146,7 +116,6 @@ class Profile extends StatelessWidget {
                   ),
                   Spacer(),
                   Spacer(),
-                  // Spacer(),
                 ],
               ),
             ),

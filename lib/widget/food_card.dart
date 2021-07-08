@@ -38,7 +38,7 @@ class FoodCard extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 8.0,
+          height: 6.0,
         ),
         Row(
           children: [

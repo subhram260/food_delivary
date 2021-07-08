@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:food_delivary/screen/SignIn.dart';
-// import 'package:food_delivary/screen/Signup.dart';
 import 'package:food_delivary/body.dart';
-// import 'package:food_delivary/controllers/authentication.dart';
-// import 'package:food_delivary/profile.dart';
-
-// import '../utils/Constants.dart';
 
 class SignUp extends StatelessWidget {
   @override
@@ -62,11 +56,6 @@ class _FormsState extends State<Forms> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // InkWell(
-              //   onTap: () => googleSignIn()
-              //     ..whenComplete(() => Navigator.of(context).pushReplacement(
-              //         MaterialPageRoute(builder: (context) => Profile()))),
-              // child:
               Container(
                 padding: EdgeInsets.all(6),
                 width: 100,

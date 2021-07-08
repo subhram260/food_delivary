@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivary/model/category_model.dart';
+// import 'package:food_delivary/model/category_model.dart';
+// import 'package:food_delivary_ayushman/model/category_model.dart';
 // import 'package:foodify/src/model/category_model.dart';
 
 import '../data/category_data.dart';
@@ -18,7 +20,7 @@ class FoodCategory extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return FoodCard(
             categoryName: _categories[index].categoryName,
-            iconpath: _categories[index].iconpath,
+            iconpath: _categories[index].iconpath, numberOfItems: '',
             //numberOfItems: _categories[index].numberOfItems,
           );
         },

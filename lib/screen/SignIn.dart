@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:food_delivary/profile.dart';
 import 'package:food_delivary/screen/Signup.dart';
 import 'package:food_delivary/body.dart';
 import 'package:food_delivary/screens/main_screen.dart';
-// import 'package:get/get.dart';
-// import 'package:food_delivary/controllers/authentication.dart';
-// import 'package:food_delivary/profile.dart';
-
-// import '../utils/Constants.dart';
+import 'Forgot.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -225,7 +220,10 @@ class _FormsState extends State<Forms> {
           Container(
             child: TextButton(
               child: Text("Forgot Password ?"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Forgot()));
+              },
             ),
           ),
           SizedBox(
@@ -234,9 +232,11 @@ class _FormsState extends State<Forms> {
           DefaultButton(
             text: "Sign in",
             press: () {
+              // FocusScope.of(context).requestFocus(FocusNode());
+
               // Get.to(Profile());
-              // Navigator.of(context).pushReplacement(
-              //     MaterialPageRoute(builder: (context) => MainScreen()));
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => MainScreen()));
             },
           ),
           // => signIn(email, passward).whenComplete(() =>

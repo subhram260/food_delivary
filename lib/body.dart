@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivary/screen/SignIn.dart';
+// import 'package:food_delivary_ayushman/screen/SignIn.dart';
+// import 'package:food_delivary/screen/SignIn.dart';
 
 class Body extends StatefulWidget {
   // const Body({ Key? key }) : super(key: key);
@@ -19,7 +21,7 @@ class _BodyState extends State<Body> {
     super.initState();
   }
 
-  var splash = [
+  List splash = [
     // List<Map< String,String,String,String,String,String,>> splash =[
     {
       "text1": "Be Together",
@@ -88,18 +90,19 @@ class _BodyState extends State<Body> {
                   ),
                   Spacer(),
                   DefaultButton(
-                      text: next(currentPage),
-                      press: () {
-                        if (currentPage == 2) {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => SignIn()),
-                          );
-                        } else {
-                          _controler.nextPage(
-                              duration: Duration(milliseconds: 600),
-                              curve: Curves.easeInOut);
-                        }
-                      }),
+                    text: next(currentPage),
+                    press: () {
+                      if (currentPage == 2) {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => SignIn()),
+                        );
+                      } else {
+                        _controler.nextPage(
+                            duration: Duration(milliseconds: 600),
+                            curve: Curves.easeInOut);
+                      }
+                    },
+                  ),
                   Spacer()
                 ],
               ),
@@ -134,13 +137,13 @@ class _BodyState extends State<Body> {
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
-    Key key,
+    key,
     this.text,
     this.press,
   }) : super(key: key);
 
   final String text;
-  final Function press;
+  final press;
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +166,7 @@ class DefaultButton extends StatelessWidget {
 
 class Spl extends StatelessWidget {
   const Spl({
-    Key key,
+    key,
     this.text1,
     this.text2,
     this.image,

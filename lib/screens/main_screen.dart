@@ -1,13 +1,9 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:food_delivary/pages/accounts_page.dart';
-import 'package:food_delivary/pages/favourite_page.dart';
-import 'package:food_delivary/pages/orderpage.dart';
-import 'package:food_delivary/profile.dart';
-// import 'package:flutter/rendering.dart';
-// import 'package:foodify/src/pages/accounts_page.dart';
-// import 'package:foodify/src/pages/favourite_page.dart';
-// import 'package:foodify/src/pages/orderpage.dart';
+import 'package:food_delivary/pages/cart.dart';
+import 'package:food_delivary/pages/profile.dart';
+import 'package:food_delivary/pages/search.dart';
 import '../pages/home_page.dart';
 
 class MainScreen extends StatefulWidget {
@@ -23,22 +19,24 @@ class _MainScreenState extends State<MainScreen> {
   int currentTabindex = 0;
 
   List<Widget> pages;
-  Widget currentPage;
+  int selectedindex = 0;
+  // Widget currentPage;
 
   HomePage homePage;
-  OrderPage orderPage;
-  FavouritePage favouritePage;
-  Profile accountsPage;
+  SearchPage searchPage;
+  CartPage cartPage;
+  ProfilePage profilePage;
   @override
   void initState() {
     super.initState();
     homePage = HomePage();
-    orderPage = OrderPage();
-    favouritePage = FavouritePage();
-    accountsPage = Profile();
-    pages = [homePage, orderPage, favouritePage, accountsPage];
+    searchPage = SearchPage();
+    cartPage = CartPage();
+    profilePage = ProfilePage();
 
-    currentPage = homePage;
+    pages = [homePage, searchPage, cartPage, profilePage];
+
+    // currentPage = homePage;
   }
 
   get bottomNavigation => null;
@@ -55,9 +53,9 @@ class _MainScreenState extends State<MainScreen> {
           //unselectedIconTheme: IconThemeData(size: 35.0),
           onTap: (int index) {
             setState(() {
-              currentTabindex = index;
-              currentPage = pages[index];
-              switch (currentTabindex) {
+              selectedindex = index;
+              // pages[index];
+              switch (selectedindex) {
                 case 1:
                   bg0 = Colors.white;
                   bg1 = Color(0xff6d61f2);
@@ -82,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
               }
             });
           },
-          currentIndex: currentTabindex,
+          currentIndex: selectedindex,
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -142,7 +140,13 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 label: ("Account")),
           ]),
-      body: currentPage,
+      body: IndexedStack(index: selectedindex, children: pages),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<SearchPage>('searchPage', searchPage));
   }
 }

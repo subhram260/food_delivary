@@ -4,7 +4,9 @@ import 'package:food_delivary/utils/location.dart';
 // import 'package:geocoding/geocoding.dart';
 
 class HomeTopInfo extends StatefulWidget {
+  // const HomeTopInfo({key}) : super(key: key);
   const HomeTopInfo({key}) : super(key: key);
+  // int go = 0;
 
   @override
   _HomeTopInfoState createState() => _HomeTopInfoState();
@@ -36,6 +38,8 @@ class _HomeTopInfoState extends State<HomeTopInfo> {
           //       border: InputBorder.none),
           // ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
                 onTap: () async {
@@ -133,7 +137,7 @@ class _HomeTopInfoState extends State<HomeTopInfo> {
         textAlign: TextAlign.start,
         style: TextStyle(
             fontSize: 14,
-            // fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w500,
             color: Color(0xFFD6E80B0)));
   }
 }
